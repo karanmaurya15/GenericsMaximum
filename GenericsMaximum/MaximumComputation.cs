@@ -56,5 +56,35 @@ namespace GenericsMaximum
             return Max;
 
         }
+
+        public K[] value;
+        public MaximumComputation(K[] value)
+        {
+            this.value = value;
+        }
+
+        public K[] Sort(K[] values)
+        {
+            Array.Sort(values);
+            return values;
+        }
+
+        public K MaxValue(params K[] values)
+        {
+            var sorted_values = Sort(values);
+            return sorted_values[^1];
+        }
+
+        public K MaxMethod2()
+        {
+            var max = MaxValue(this.value);
+            return max;
+        }
+
+        public void PrintMaxValue()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("Maximum Value is: " + max);
+        }
     }
 }

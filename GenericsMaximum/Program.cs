@@ -17,6 +17,10 @@ namespace GenericsMaximum
             MaximumComputation<string> maximumString = new MaximumComputation<string>("Apple", "AA", "Data", "Input");
             Console.WriteLine("Maximum Number is : " + maximumString.MaxMethod());
 
+            int[] arr = { 12, 123, 1234, 212 };
+            MaximumComputation<int> maximumComputation = new MaximumComputation<int>(arr);
+            maximumComputation.PrintMaxValue();
+
 
 
         }
