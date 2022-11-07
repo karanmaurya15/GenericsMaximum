@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace GenericsMaximum
 {
-    internal class MaximumComputation
+    public class MaximumComputation<K> where K : IComparable
     {
-        public K MaxNumber<K>(K firstValue, K secondvalue, K thirdValue) where K : IComparable
+        public K firstValue, secondvalue, thirdValue;
+        public MaximumComputation(K firstValue, K secondvalue, K thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondvalue = secondvalue;
+            this.thirdValue = thirdValue;
+        }
+
+        public static K MaxNumber<K>(K firstValue, K secondvalue, K thirdValue) where K : IComparable
         {
             if (firstValue.CompareTo(secondvalue) > 0 && firstValue.CompareTo(thirdValue) > 0 ||
                 firstValue.CompareTo(secondvalue) >= 0 && firstValue.CompareTo(thirdValue) > 0 ||
@@ -29,6 +37,11 @@ namespace GenericsMaximum
                 return thirdValue;
             }
             return firstValue;
+        }
+        public K MaxMethod()
+        {
+            K Max = MaximumComputation<K>.MaxNumber(this.firstValue, this.secondvalue, this.thirdValue);
+            return Max;
         }
     }
 }

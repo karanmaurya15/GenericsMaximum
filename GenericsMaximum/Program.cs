@@ -7,12 +7,15 @@ namespace GenericsMaximum
     { 
         static void Main(string[] args) 
         {
-            MaximumComputation maximumComputation = new MaximumComputation();
+           
             Console.WriteLine("Wellcome to Generics Program\n");
+            MaximumComputation<int> maximumInt = new MaximumComputation<int>(56, 245, 45);
+            Console.WriteLine("Maximum Number is : " + maximumInt.MaxMethod());
+            MaximumComputation<float> maximumFloat = new MaximumComputation<float>(17.9f, 20.6f, 309.5f);
+            Console.WriteLine("Maximum Number is : " + maximumFloat.MaxMethod());
+            MaximumComputation<string> maximumString = new MaximumComputation<string>("Apple", "AA", "Data");
+            Console.WriteLine("Maximum Number is : " + maximumString.MaxMethod());
 
-            Console.WriteLine("Maximum Interger Number is : " + maximumComputation.MaxNumber<int>(56, 78, 67));
-            Console.WriteLine("Maximum Float Number is : " + maximumComputation.MaxNumber<float>(56.8f, 20.8f, 12.9f));
-            Console.WriteLine("Maximum String  is : " + maximumComputation.MaxNumber<string>("Input", "Value", "Data"));
 
 
         }
