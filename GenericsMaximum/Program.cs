@@ -39,14 +39,8 @@ namespace GenericsMaximum
             double firstNumber = Convert.ToDouble(Console.ReadLine());
             double secondNumber = Convert.ToDouble(Console.ReadLine());
             double thirdNumber = Convert.ToDouble(Console.ReadLine());
-            double res = MaxNumCheck.MaxDoubleNumber(firstNumber, secondNumber, thirdNumber);
-            Console.WriteLine("The Maximum Number is : " + res);
-
-
-
-
-
-
+            double result = MaxNumCheck.MaxDoubleNumber(firstNumber, secondNumber, thirdNumber);
+            Console.WriteLine("The Maximum Number is : " + result);
 
         }
     }
