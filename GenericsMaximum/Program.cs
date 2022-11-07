@@ -4,8 +4,8 @@ namespace GenericsMaximum
 {
     public class MaxNumCheck
     {
-       
-        public static int MaxIntNumber(int firstNumber, int secondNumber, int thirdNumber)
+
+        public static double MaxDoubleNumber(double firstNumber, double secondNumber, double thirdNumber)
         {
            
 
@@ -33,9 +33,20 @@ namespace GenericsMaximum
         {
 
             Console.WriteLine("Wellcome to Generics Program");
-            int result = MaxNumCheck.MaxIntNumber(55,43,23);
-            Console.WriteLine(result);
-         
+            // float result = MaxNumCheck.MaxFloatNumber(5.5f,4.43f,2.67f );
+            // Console.WriteLine(result);
+            Console.WriteLine("Enter First number, Second number, Third number to check : ");
+            double firstNumber = Convert.ToDouble(Console.ReadLine());
+            double secondNumber = Convert.ToDouble(Console.ReadLine());
+            double thirdNumber = Convert.ToDouble(Console.ReadLine());
+            double res = MaxNumCheck.MaxDoubleNumber(firstNumber, secondNumber, thirdNumber);
+            Console.WriteLine("The Maximum Number is : " + res);
+
+
+
+
+
+
 
         }
     }
