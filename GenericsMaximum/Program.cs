@@ -5,23 +5,23 @@ namespace GenericsMaximum
     public class MaxNumCheck
     {
 
-        public static double MaxDoubleNumber(double firstNumber, double secondNumber, double thirdNumber)
+        public static string MaxString(string firstString, string secondString, string thirdString)
         {
            
 
-            if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
+            if (firstString.Length.CompareTo(secondString.Length) > 0 && firstString.CompareTo(thirdString.Length) > 0)
             {
-                return firstNumber;
+                return firstString;
             }
-            if (secondNumber.CompareTo(thirdNumber) > 0 && secondNumber.CompareTo(firstNumber) > 0)
+            if (secondString.Length.CompareTo(thirdString.Length) > 0 && secondString.Length.CompareTo(thirdString.Length) > 0)
             {
-                return secondNumber;
+                return secondString;
             }
-            if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
+            if (thirdString.Length.CompareTo(firstString.Length) > 0 && thirdString.Length.CompareTo(secondString.Length) > 0)
             {
-                return thirdNumber;
+                return thirdString;
             }
-            throw new Exception("firstNumber,secondNumber and thirdnumber are same");
+            throw new Exception("firstword,secondword and thirdword are same length");
            
         }
         
@@ -32,15 +32,15 @@ namespace GenericsMaximum
         static void Main(string[] args) 
         {
 
-            Console.WriteLine("Wellcome to Generics Program");
-            // float result = MaxNumCheck.MaxFloatNumber(5.5f,4.43f,2.67f );
-            // Console.WriteLine(result);
-            Console.WriteLine("Enter First number, Second number, Third number to check : ");
-            double firstNumber = Convert.ToDouble(Console.ReadLine());
-            double secondNumber = Convert.ToDouble(Console.ReadLine());
-            double thirdNumber = Convert.ToDouble(Console.ReadLine());
-            double result = MaxNumCheck.MaxDoubleNumber(firstNumber, secondNumber, thirdNumber);
-            Console.WriteLine("The Maximum Number is : " + result);
+            Console.WriteLine("Wellcome to Generics Program\n");
+
+            Console.WriteLine("Enter Three Strings to check : ");
+            string firstString = Console.ReadLine();
+            string secondString = Console.ReadLine();
+            string thirdString = Console.ReadLine();
+            string largest = MaxNumCheck.MaxString(firstString, secondString, thirdString);
+            Console.WriteLine("The Largest String is : " + largest);
+
 
         }
     }
