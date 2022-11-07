@@ -2,44 +2,17 @@
 
 namespace GenericsMaximum
 {
-    public class MaxNumCheck
-    {
-
-        public static string MaxString(string firstString, string secondString, string thirdString)
-        {
-           
-
-            if (firstString.Length.CompareTo(secondString.Length) > 0 && firstString.CompareTo(thirdString.Length) > 0)
-            {
-                return firstString;
-            }
-            if (secondString.Length.CompareTo(thirdString.Length) > 0 && secondString.Length.CompareTo(thirdString.Length) > 0)
-            {
-                return secondString;
-            }
-            if (thirdString.Length.CompareTo(firstString.Length) > 0 && thirdString.Length.CompareTo(secondString.Length) > 0)
-            {
-                return thirdString;
-            }
-            throw new Exception("firstword,secondword and thirdword are same length");
-           
-        }
-        
-    }
-    
+   
     internal class program
     { 
         static void Main(string[] args) 
         {
-
+            MaximumComputation maximumComputation = new MaximumComputation();
             Console.WriteLine("Wellcome to Generics Program\n");
 
-            Console.WriteLine("Enter Three Strings to check : ");
-            string firstString = Console.ReadLine();
-            string secondString = Console.ReadLine();
-            string thirdString = Console.ReadLine();
-            string largest = MaxNumCheck.MaxString(firstString, secondString, thirdString);
-            Console.WriteLine("The Largest String is : " + largest);
+            Console.WriteLine("Maximum Interger Number is : " + maximumComputation.MaxNumber<int>(56, 78, 67));
+            Console.WriteLine("Maximum Float Number is : " + maximumComputation.MaxNumber<float>(56.8f, 20.8f, 12.9f));
+            Console.WriteLine("Maximum String  is : " + maximumComputation.MaxNumber<string>("Input", "Value", "Data"));
 
 
         }
